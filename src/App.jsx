@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { initGemini, sendMessage } from './lib/gemini';
 import Header from './components/Header';
 import FeatureGrid from './components/FeatureGrid';
+import GridComparison from './components/GridComparison';
 import BusinessImpact from './components/BusinessImpact';
 import ChatDrawer from './components/ChatDrawer';
 import './index.css';
@@ -47,6 +48,7 @@ export default function App() {
       />
       <main id="main-content">
         <FeatureGrid onDeepDive={handleDeepDive} />
+        <GridComparison />
         <BusinessImpact />
       </main>
       <ChatDrawer

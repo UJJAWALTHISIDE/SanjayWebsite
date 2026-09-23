@@ -9,7 +9,7 @@ export default function Header({ onToggleChat, chatOpen }) {
   return (
     <header
       style={{
-        position: 'fixed',
+        position: 'absolute',
         top: 0,
         left: 0,
         right: 0,
@@ -147,9 +147,7 @@ export default function Header({ onToggleChat, chatOpen }) {
           className="lg-quote"
         >
           "Digital eyes for autonomous navigation — processing the world in real-time."
-        
         </p>
-       
 
         {/* Right: Chat drawer trigger button */}
         <button
