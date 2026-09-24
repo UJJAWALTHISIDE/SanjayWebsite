@@ -46,20 +46,21 @@ export default function FeatureGrid({ onDeepDive }) {
       }}
       aria-label="SANJAY feature modules"
     >
-       <p
-  style={{
-    fontFamily: 'Inter, sans-serif',
-    fontSize: '1.2rem',
-    color: '#0a57c2',
-    fontStyle: 'italic',
-    textAlign: 'center',
-    lineHeight: 1.5,
-    margin: '0 auto 24px',
-    width: '100%',
-  }}
->
-  "Like Sanjay to Dhritrashtra, we grant vision to sightless machine."
-</p>
+      <p
+        style={{
+          fontFamily: 'Inter, sans-serif',
+          fontSize: '1.2rem',
+          color: '#0a57c2',
+          fontStyle: 'italic',
+          textAlign: 'center',
+          lineHeight: 1.5,
+          margin: '0 auto 24px',
+          width: '100%',
+        }}
+      >
+        "Like Sanjay to Dhritrashtra, we grant vision to sightless machine."
+      </p>
+
       {/* ── Page hero text ── */}
       <div style={{ textAlign: 'center', marginBottom: 40 }}>
         <span
@@ -96,9 +97,112 @@ export default function FeatureGrid({ onDeepDive }) {
         </p>
       </div>
 
-      {/* ── Video player (centered, uncropped full visibility) ── */}
-      <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 48 }}>
-        <VideoPlayer customSource={customVideoUrl} />
+      {/* ── Side-by-Side Section: Video Player & Mythology Concept Card ── */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 28,
+          marginBottom: 48,
+        }}
+      >
+        {/* Uncropped Video Carousel Player Container */}
+        <div style={{ flex: '1 1 540px', maxWidth: 760, minWidth: 320 }}>
+          <VideoPlayer customSource={customVideoUrl} />
+        </div>
+
+        {/* Mythology Concept Artwork Card (Beside video, white background blend, no overlap) */}
+        <div
+          style={{
+            flex: '0 1 320px',
+            maxWidth: 340,
+            background: 'rgba(255, 255, 255, 0.85)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            borderRadius: 20,
+            padding: '20px',
+            border: '1px solid #e2e8f0',
+            boxShadow: '0 10px 30px rgba(15, 23, 42, 0.05)',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+          }}
+        >
+          {/* Artwork Image Container with seamless background blend */}
+          <div
+            style={{
+              width: '100%',
+              borderRadius: 14,
+              overflow: 'hidden',
+              background: '#ffffff',
+              marginBottom: 14,
+              padding: 4,
+            }}
+          >
+            <img
+              src="/sanjaya_mythology.jpg"
+              alt="Sanjaya narrating the battlefield to King Dhritrashtra"
+              style={{
+                width: '100%',
+                height: 'auto',
+                display: 'block',
+                mixBlendMode: 'multiply',
+                borderRadius: 12,
+              }}
+            />
+          </div>
+
+          {/* Concept Caption */}
+          <div>
+            <span
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: '0.64rem',
+                fontWeight: 700,
+                color: '#2563eb',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                background: '#eff6ff',
+                border: '1px solid #bfdbfe',
+                padding: '3px 10px',
+                borderRadius: 99,
+                display: 'inline-block',
+                marginBottom: 8,
+              }}
+            >
+              The Core Concept
+            </span>
+
+            <h3
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: '0.98rem',
+                fontWeight: 700,
+                color: '#0f172a',
+                lineHeight: 1.3,
+                marginBottom: 6,
+              }}
+            >
+              "Sanjaya, what do you see?"
+            </h3>
+
+            <p
+              style={{
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '0.78rem',
+                color: '#64748b',
+                lineHeight: 1.5,
+                margin: 0,
+              }}
+            >
+              Just as Sanjaya projected the battlefield to the blind King Dhritrashtra, Project Sanjaya acts as digital eyes for autonomous navigation.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* ── Action bar just before cards: GitHub Link & Future Video Button ── */}
@@ -157,31 +261,34 @@ export default function FeatureGrid({ onDeepDive }) {
             </svg>
             <span>GitHub Repository</span>
           </a>
-
-          {/* Add Intro Video Button */}
-          <button
-            onClick={() => setModalOpen(true)}
+           <a
+            href="https://youtu.be/KYhXxxT2f0E"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: 8,
               padding: '9px 16px',
               borderRadius: 10,
-              background: '#ffffff',
-              color: '#2563eb',
-              border: '1px solid #bfdbfe',
+              background: '#9eb9f8',
+              color: '#131212',
               fontFamily: "'Space Grotesk', sans-serif",
               fontWeight: 600,
               fontSize: '0.82rem',
-              cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(37, 99, 235, 0.1)',
+              textDecoration: 'none',
+              boxShadow: '0 4px 12px rgba(15, 23, 42, 0.2)',
               transition: 'transform 0.2s ease, background 0.2s ease',
             }}
-            className="hover:scale-105 hover:bg-blue-50"
+            className="hover:scale-105 hover:bg-slate-800"
           >
+            {/* GitHub SVG Icon */}
             <span>🎥</span>
-            <span>+ Add Intro Video (Future)</span>
-          </button>
+            <span>Watch the Details Here! </span>
+          </a>
+
+          {/* Add Intro Video Button */}
+         
         </div>
       </div>
 
